@@ -1,0 +1,41 @@
+
+    Introduction to Hivernate & Spring Data JPA
+
+    :: Spring Data JPA
+    - ใช้สำหรับสนับสนุน JPA API Standard
+
+    :: JPA - Java Persustence API
+    - เป็น API ทั่วไปสำหรับการทำงานกับฐานข้อมูล โดยสามารถทำได้ทั้งกับ SQL และ NoSQL
+    - จะเป็นเพียง Interface เท่านั้น จะต้องไปกำหนดวิธีการทำงานเอาเอง
+
+    :: Hibernate
+    - เป็น Object Relational Mapping Tool ที่่สืบทอด Interface มาจาก JPA
+    - เป็นชุดของ class ที่ Implement Interface JPA มาเขียนการทำงานข้างใน
+    - ได้รับความนิยมสูงสุด
+    - มี package อื่น ๆ อยู่อีก เช่น EclipseLink, Apache OpenJPA, TopLink โดยทั้งหมดต่างก็ Implement Implement JPA ไป
+      เขียนการทำงานของตัวเอง
+    - ดำเนินการกับฐานข้อมูลด้วยภาษา SQL
+
+    :: ORM - Object Relational Mapping
+    - ทำหน้าที่เชื่อมความสัมพันธ์ระหว่าง Class Model กับ Table
+
+    :: JDBC
+    - เป็น Java API สำหรัยเชื่อมต่อกับฐานข้อมูล โดยจะเป็นเพียง Interface เท่านั้น
+    - แต่ละฐานข้อมูลจะมีการ Implement JDBC เป็นของตัวเอง โดยเรียกว่า JDBC Driver
+
+    Diagrams
+    [database] <---> [ANSI SQL] <--->   [JDBC]      <---> [JPA]
+    [database] <---> [SQL]      <--->   [DB Driver] <---> [Hibernate] <---> [Spring Data JPA]
+
+    :: Abstraction Layer
+    - Spring Data JPA เป็น Abstraction Layer 
+    - เป็นระดับต่ำ เช่น การเชื่อมต่อกับฐานข้อมูลและการควบคุม transactions โดยทั้งหมดนี้จะถูกแยกออกจาก Layer 
+      ที่เราต้องจัดการ โดย Spring จะจัดการให้เราเอง
+
+    :: Repository Pattern
+    - Spring Data JPA จะใช้งาน Pattern นี้ (Domain Driven Design)
+    - Spring Data JPA จะจัดเตรียม Interface ให้เรานำไป Implement โดยจะมี CRUD ครบ
+
+    :: เมื่อไหร่ไม่ควรใช้ JPA
+    - ไม่ได้ดีที่สุดสำหรับ batch operations
+    - หากต้องการบันทึกข้อมูลทีละ 10000 rows ขึ้นไป JPA จะไม่เหมาะ
