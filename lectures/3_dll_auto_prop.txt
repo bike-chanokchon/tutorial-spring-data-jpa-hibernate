@@ -1,0 +1,13 @@
+
+    :: HBD DLL Auto Properties
+    - none          -> ปิดใช้งาน Schema generation tool 
+    - create-only   -> สร้าง Database Schema จาก JPA Entities
+    - drop          -> ลบ Database table
+    - create        -> ลบ Database Schema ก่อนแล้วจึงสร้าง Database Schema จาก JPA Entities
+    - create-drop   -> เมื่อ start project จะสร้าง Database Schema ขึ้นมา และเมื่อ stop project จะทำการลบ Database Schema
+    - validate      -> ตรวจสอบ Schema หากมีข้อผิดพลาดร้ายแรงเกิดขึ้น จะหยุดการทำงานของ Applications
+    - update        -> จะเปลี่ยนแปรง Database Schema ตาม JPA Entities
+
+    :: ค่าเริ่มต้นของ table names และ column names คือ snake case
+
+    :: Production Database จะใช้เป็น validate หรือ none
