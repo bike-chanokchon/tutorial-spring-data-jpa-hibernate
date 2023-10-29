@@ -1,0 +1,44 @@
+
+    :: Migrations
+    เป็นกระบวนการที่จะย้าย programmimg code จากระบบหนึ่ง ไปยังระบบอื่น ๆ
+
+    :: Database Migrations Tools ยอดนิยมสำหรับ Spring Boot
+        - Liquibase
+        - Flyway
+
+    :: Database Migrations Tools
+    ข้อดีของการใช้ database migrations tools 
+        - สร้างฐานข้อมูลใหม่
+        - จัดเก็บประวัติการทำ migrations ไว้
+
+    :: Liquibase and Flyway Feature
+        - Command Line Tools
+        - Integration with Maven and Gradle
+        - Spring Boot Integration
+        - Use script files which can be versioned and tracked
+        - Use database table to track changes
+        - Have commercial support
+
+    :: Liquibase Terminology
+        - ChangeSet
+        ชุดของการเปลี่ยนแปลงที่จะนำไปใช้กับฐานข้อมูล
+        - Change 
+        การเปลี่ยนแปลงเพียงครั้งเดียวที่จะนำไปใช้
+        - Changelog
+        เป็นไฟล์ที่แสดงรายการ ChangeSets ที่จะนำไปใช้
+        - Preconditions
+        เงื่อนไขที่ใช้ควบคุมการดำเนินการ
+        - Context
+        สิ่งที่ช่วยควบคุมว่า script ควรที่จะถูกสั่งให้ทำงานหรือไม่
+        - ChangeLog Parameters
+        ค่าที่สามารถแทนได้ในขณะ runtime
+
+    :: Liquibase Best Practices
+        - Organizing Change Logs
+        สร้าง master change log ขึ้นมาเพื่อจัดระบบ Change Sets
+        - One Change Per Change Set 
+        ช่วยให้สามารถย้อนกลับได้ง่ายขึ้นหากมีความล้มเหลว
+        - Never Modify a Change Set
+        ควรเพิ่มการเปลี่ยนแปรงเข้าไปใหม่
+        - Use meaningful change set ids ( ใช้รหัสชุดการเปลี่ยนแปลงที่มีความหมาย )
+        บางอันเป็นหมายเลขคำขอ บางอันใช้ชื่อที่สื่อความหมาย
